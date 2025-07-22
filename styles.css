@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    text-align: center;
+    position: relative;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.game-header h1 {
+    font-size: 2.5em;
+    color: #00ff88;
+    text-shadow: 0 0 10px #00ff88;
+}
+
+.game-stats {
+    display: flex;
+    gap: 30px;
+}
+
+.stat {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.label {
+    color: #aaa;
+}
+
+#score, #lives {
+    color: #00ff88;
+    margin-left: 5px;
+}
+
+#gameCanvas {
+    border: 3px solid #00ff88;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #000428 0%, #004e92 100%);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.game-controls {
+    margin-top: 20px;
+}
+
+.instructions {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+.instructions h3 {
+    color: #00ff88;
+    margin-bottom: 10px;
+}
+
+.instructions p {
+    margin: 5px 0;
+    color: #ccc;
+}
+
+.game-over, .start-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    border: 2px solid #00ff88;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+    z-index: 100;
+}
+
+.game-over h2, .start-screen h2 {
+    color: #ff4444;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.start-screen h2 {
+    color: #00ff88;
+}
+
+.game-over p, .start-screen p {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+#finalScore {
+    color: #00ff88;
+    font-weight: bold;
+}
+
+button {
+    background: linear-gradient(45deg, #00ff88, #00cc66);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.6);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .game-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .game-header h1 {
+        font-size: 2em;
+    }
+    
+    #gameCanvas {
+        width: 90vw;
+        height: auto;
+    }
+}
